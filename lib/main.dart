@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 String title = "Stay With Me";
 String artist = "Sam Smith";
 
+
 void main() {
   runApp(MyApp());
 }
@@ -31,7 +32,15 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+
+
+
 class _MyHomePageState extends State<MyHomePage> {
+
+  int height = 180;
+  bool _play = false;
+  bool _favorite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,21 +82,93 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(Icons.favorite_border, color: Colors.white,),
-              ),
+              (() {
+                if (_favorite == false) {
+                  return InkWell(
+                      highlightColor: Colors.white,
+                      splashColor: Colors.white,
+                      onTap: (){
+                        setState(() {
+                          _favorite = true;
+                        });
+                      },
+                      child: Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                        size: 30,
+                      )
+                  );
+                } else {
+                  return InkWell(
+                      highlightColor: Colors.white,
+                      splashColor: Colors.white,
+                      onTap: (){
+                        setState(() {
+                          _favorite = false;
+                        });
+                      },
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.white,
+                        size: 30,
+                      )
+                  );
+                }
+              })(),
             ],
           ),
           Expanded(child: Container()),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.cancel, color: Colors.white,),
+              InkWell(child: Icon(Icons.cancel, color: Colors.white,)),
               Icon(Icons.arrow_left, color: Colors.white, size: 50,),
-              Icon(Icons.play_arrow_outlined, color: Colors.white, size: 70,),
+              (() {
+                if (_play == false) {
+                  return InkWell(
+                      highlightColor: Colors.white,
+                      splashColor: Colors.white,
+                      onTap: (){
+                        setState(() {
+                          _play = true;
+                        });
+                      },
+                      child: Icon(
+                        Icons.play_arrow_outlined,
+                        color: Colors.white,
+                        size: 70,
+                      )
+                  );
+                } else {
+                  return InkWell(
+                      highlightColor: Colors.white,
+                      splashColor: Colors.white,
+                      onTap: (){
+                        setState(() {
+                          _play = false;
+                        });
+                      },
+                      child: Icon(
+                        Icons.stop,
+                        color: Colors.white,
+                        size: 70,
+                      )
+                  );
+                }
+              })(),
               Icon(Icons.arrow_right, color: Colors.white, size: 50,),
               Icon(Icons.camera, color: Colors.white,),
             ],
+          ),
+          Expanded(child: Container()),
+          Slider(
+            value: height.toDouble(),
+            min: 120,
+            max: 220,
+            onChanged: (double newValue) {
+              setState(() {
+                height = newValue.round();
+              });
+            },
           ),
           Expanded(child: Container()),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
