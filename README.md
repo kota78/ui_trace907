@@ -1,18 +1,5 @@
-# ui_trace907
+# 目標物
+<img width="294" alt="スクリーンショット 2022-10-11 21 02 06" src="https://user-images.githubusercontent.com/82959924/195084361-c31264cd-98ed-4101-bc24-9ffc746e1926.png">
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# ui_trace907
+# 成果物
 <img src="https://user-images.githubusercontent.com/82959924/132472959-708b98be-99b8-44af-b449-264f0c0ac61b.png" width="320px">
